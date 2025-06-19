@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import static org.junit.Assert.assertTrue;
 
 public class GoogleSearchTest {
     private WebDriver driver;
@@ -18,10 +18,10 @@ public class GoogleSearchTest {
     }
 
     @Test
-    public void testGoogleSearchInputIsVisible() {
+    public void googleSearchTest() {
         driver.get("https://www.google.com");
         WebElement searchBtn = driver.findElement(By.xpath("//*[@aria-label='Gmail ']"));
-        assertTrue(searchBtn.isDisplayed());
+        Assert.assertTrue(searchBtn.isDisplayed());
     }
 
     @AfterMethod
