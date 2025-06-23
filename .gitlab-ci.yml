@@ -8,18 +8,24 @@ variables:
 
 compile:
   stage: compile
+  tags:
+    - macos
   image: maven:3.9.6-eclipse-temurin-17
   script:
     - mvn compile
 
 test:
   stage: test
+  tags:
+    - macos
   image: maven:3.9.6-eclipse-temurin-17
   script:
     - mvn test
 
 build:
   stage: build
+  tags:
+    - macos
   image: maven:3.9.6-eclipse-temurin-17
   script:
     - echo "Build successful"
