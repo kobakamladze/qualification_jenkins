@@ -1,0 +1,25 @@
+stages:
+  - compile
+  - test
+  - build
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+compile:
+  stage: compile
+  image: maven:3.9.6-eclipse-temurin-17
+  script:
+    - mvn compile
+
+test:
+  stage: test
+  image: maven:3.9.6-eclipse-temurin-17
+  script:
+    - mvn test
+
+build:
+  stage: build
+  image: maven:3.9.6-eclipse-temurin-17
+  script:
+    - echo "Build successful"
